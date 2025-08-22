@@ -1,0 +1,15 @@
+POST http://localhost:3000/api/agent
+Content-Type: application/json
+
+{
+  "prompt": "tell me a joke"
+}
+
+###
+
+POST https://hello-vercel-cou0wd4tk-james-jameswardcos-projects.vercel.app/api/agent
+Content-Type: application/json
+
+{
+  "prompt": "tell me a joke"
+}
