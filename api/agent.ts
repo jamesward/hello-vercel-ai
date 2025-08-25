@@ -1,5 +1,13 @@
 import { generateText } from 'ai'
-import { openai } from '@ai-sdk/openai'
+import { createAmazonBedrock } from '@ai-sdk/amazon-bedrock'
+import { fromNodeProviderChain } from '@aws-sdk/credential-providers'
+
+const bedrock = createAmazonBedrock({
+  region: 'us-east-2',
+  credentialProvider: fromNodeProviderChain(),
+})
+
+const model = bedrock('us.amazon.nova-lite-v1:0')
 
 export const POST = async (request: Request) => {
   const { prompt }: { prompt?: string } = await request.json()
@@ -9,7 +17,7 @@ export const POST = async (request: Request) => {
   }
 
   const result = await generateText({
-    model: openai('gpt-4.1'),
+    model,
     prompt,
   })
 

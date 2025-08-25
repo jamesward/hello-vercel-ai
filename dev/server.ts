@@ -4,6 +4,16 @@ import {POST} from "../api/agent";
 
 const app = new Hono()
 
-app.post('/api/agent', async (c) => POST(c.req.raw))
+app.post('/invocations', async (c) => POST(c.req.raw))
 
-serve({ fetch: app.fetch, port: 3000 })
+app.get("/ping", (c) => {
+  return c.json({
+    status: "Healthy",
+    time_of_last_update: Math.floor(Date.now() / 1000)
+  }, 200)
+})
+
+serve({
+  fetch: app.fetch,
+  port: process.env.PORT ? parseInt(process.env.PORT) : 3000
+})
