@@ -1,13 +1,7 @@
 import { generateText } from 'ai'
-import { createAmazonBedrock } from '@ai-sdk/amazon-bedrock'
-import { fromNodeProviderChain } from '@aws-sdk/credential-providers'
+import { google } from '@ai-sdk/google'
 
-const bedrock = createAmazonBedrock({
-  region: 'us-west-2',
-  credentialProvider: fromNodeProviderChain(),
-})
-
-const model = bedrock('us.amazon.nova-lite-v1:0')
+const model = google('gemini-2.5-flash')
 
 export const POST = async (request: Request) => {
   const reqBody: any = await request.json()

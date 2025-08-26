@@ -7,7 +7,7 @@ Content-Type: application/json
 
 ###
 
-POST https://hello-vercel-cou0wd4tk-james-jameswardcos-projects.vercel.app/api/agent
+POST https://hello-vercel-ai-374286597410.us-central1.run.app/invocations
 Content-Type: application/json
 
 {

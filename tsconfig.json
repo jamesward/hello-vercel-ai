@@ -18,6 +18,6 @@
     "sourceMap": true,
     "noEmitOnError": true
   },
-  "include": ["api/**/*", "dev/**/*", "test/**/*"],
+  "include": ["api/**/*", "dev/**/*"],
   "exclude": ["node_modules", "dist"]
 }
