@@ -1,11 +1,13 @@
 {
   "name": "hello-vercel-ai",
   "version": "1.0.0",
+  "type": "module",
   "main": "dist/dev/server.js",
   "scripts": {
     "build": "tsc",
     "start": "node dist/dev/server.js",
-    "dev": "nodemon --exec ts-node dev/server.ts"
+    "dev": "nodemon --exec tsx dev/server.ts",
+    "test": "npm run build && node dist/test/agentcore.js"
   },
   "keywords": [],
   "author": "",
@@ -13,14 +15,15 @@
   "description": "",
   "dependencies": {
     "@ai-sdk/amazon-bedrock": "3.0.10",
-    "@aws-sdk/credential-providers": "^3.873.0",
+    "@aws-sdk/credential-providers": "3.873.0",
     "@hono/node-server": "1.19.0",
     "ai": "5.0.21"
   },
   "devDependencies": {
     "@types/node": "24.3.0",
     "nodemon": "3.1.10",
-    "ts-node": "10.9.2",
-    "typescript": "5.9.2"
+    "tsx": "4.20.5",
+    "typescript": "5.9.2",
+    "@aws-sdk/client-bedrock-agentcore": "3.873.0"
   }
 }

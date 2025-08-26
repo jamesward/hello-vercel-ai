@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "commonjs",
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "moduleDetection": "force",
+    "verbatimModuleSyntax": true,
     "outDir": "./dist",
     "rootDir": "./",
     "strict": true,
@@ -11,8 +15,9 @@
     "resolveJsonModule": true,
     "declaration": true,
     "declarationMap": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "noEmitOnError": true
   },
-  "include": ["api/**/*", "dev/**/*"],
+  "include": ["api/**/*", "dev/**/*", "test/**/*"],
   "exclude": ["node_modules", "dist"]
 }
