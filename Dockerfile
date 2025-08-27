@@ -1,4 +1,4 @@
-FROM --platform=linux/arm64 node:20-alpine AS builder
+FROM --platform=linux/arm64 public.ecr.aws/docker/library/node:20-alpine AS builder
 
 WORKDIR /app
 
@@ -8,7 +8,7 @@ RUN npm install
 
 RUN npm run build
 
-FROM --platform=linux/arm64 node:20-alpine
+FROM --platform=linux/arm64 public.ecr.aws/docker/library/node:20-alpine
 
 WORKDIR /app
 
