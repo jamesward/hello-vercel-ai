@@ -33,5 +33,7 @@ phases:
       - |
         aws bedrock-agentcore-control update-agent-runtime \
           --agent-runtime-id $AGENT_RUNTIME_ID \
-          --agent-runtime-artifact containerConfiguration={containerUri=$REPOSITORY_URI:$IMAGE_TAG}
+          --agent-runtime-artifact containerConfiguration={containerUri=$REPOSITORY_URI:$IMAGE_TAG} \
+          --role-arn $AGENT_ROLE_ARN \
+          --network-configuration networkMode=PUBLIC
       - echo Agent runtime update initiated successfully
