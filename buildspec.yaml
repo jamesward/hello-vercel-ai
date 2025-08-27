@@ -35,5 +35,6 @@ phases:
           --agent-runtime-id $AGENT_RUNTIME_ID \
           --agent-runtime-artifact containerConfiguration={containerUri=$REPOSITORY_URI:$IMAGE_TAG} \
           --role-arn $AGENT_ROLE_ARN \
-          --network-configuration networkMode=PUBLIC
+          --network-configuration networkMode=PUBLIC \
+          --environment-variables PORT=8080
       - echo Agent runtime update initiated successfully
